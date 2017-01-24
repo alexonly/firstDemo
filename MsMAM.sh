@@ -18,7 +18,8 @@ SHAHashCode=0CFDA9E07D328E164A037E0DBC538DEBE92ADD00
 outputPostfix=$(date +%Y%m%d_%H%M%S)
 
 #Verify workdir
-workdir=D:/temp/mam
+#workdir=D:/temp/mam
+workdir=/Users/prode/Desktop/MDM
 read -p "Input working Directory Default=> ${workdir} " NewWorkDir
 test ! -z ${NewWorkDir} && workdir=${NewWorkDir}
 echo  "Your working ${workdir}"
