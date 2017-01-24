@@ -18,15 +18,12 @@ SHAHashCode=0CFDA9E07D328E164A037E0DBC538DEBE92ADD00
 outputPostfix=$(date +%Y%m%d_%H%M%S)
 
 #Verify workdir
-<<<<<<< HEAD:MsMAM.sh
-workdir=D:/temp/mam
-=======
+#workdir=D:/temp/mam
 workdir=/Users/prode/Desktop/MDM
->>>>>>> 4d0fa3f331f08da59d85e57dc5ed44ca3ce14936:MsMAM.command
 read -p "Input working Directory Default=> ${workdir} " NewWorkDir
 test ! -z ${NewWorkDir} && workdir=${NewWorkDir}
 echo  "Your working ${workdir}"
-echo -e "\n" 
+echo -e "\n"
 test !  -d ${workdir} && echo "Your workdir is neither a directory nor existing" && exit 0
 
 #Verify source ipa
@@ -49,11 +46,13 @@ test ! -f ${workdir}/profile/${profilename} && echo "Your profile Doesn't exist 
 
 
 #Execute MAM command
-<<<<<<< HEAD:MsMAM.sh
-${MAMCmd} -i ${sourceName} -o ${workdir}/output/$(echo ${sourceName} | sed 's/.*\///g')_${outputPostfix}  -p ${workdir}/profile/${profilename} -c ${SHAHashCode}  -v true
-=======
-${MAMCmd} -i ${workdir}/input/${sourceName} -o ${workdir}/output/${sourceName}_${outputPostfix}.ipa  -p ${workdir}/profile/${profilename} -c ${SHAHashCode}  -v true
+${MAMCmd} -i ${sourceName} -o ${workdir}/output/$(echo ${sourceName} | sed 's/.*\///g')_${outputPostfix}.ipa  -p ${workdir}/profile/${profilename} -c ${SHAHashCode}  -v true
 
->>>>>>> 4d0fa3f331f08da59d85e57dc5ed44ca3ce14936:MsMAM.command
+#move source ipa to backup dir
+mv -f ${sourceName}   ${workdir}/backup/Backup_${outputPostfix}_$(echo ${sourceName} | sed 's/.*\///g')
+
+echo exitcode $$
+exit 1
+
 
 
