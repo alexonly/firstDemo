@@ -46,6 +46,6 @@ test ! -f ${workdir}/profile/${profilename} && echo "Your profile Doesn't exist 
 
 
 #Execute MAM command
-${MAMCmd} -i ${sourceName} -o ${workdir}/output/$(echo ${sourceName} | sed 's/.*\///g')_${outputPostfix}  -p ${workdir}/profile/${profilename} -c ${SHAHashCode}  -v true
+${MAMCmd} -i ${sourceName} -o ${workdir}/output/$(echo ${sourceName} | sed 's/.*\///g')_${outputPostfix}.ipa  -p ${workdir}/profile/${profilename} -c ${SHAHashCode}  -v true
 
 
