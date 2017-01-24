@@ -8,16 +8,16 @@ PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 
 #define var
-MAMCmd=/Users/prode/Desktop/Contents/MacOS/IntuneMAMPackager
+MAMCmd=/Users/prode/Desktop/MDM/Contents/MacOS/IntuneMAMPackager
 SHAHashCode=0CFDA9E07D328E164A037E0DBC538DEBE92ADD00
 outputPostfix=$(date +%Y%m%d_%H%M%S)
 
 #Verify workdir
-workdir=D:\\work\\mam
+workdir=/Users/prode/Desktop/MDM
 read -p "Input working Directory Default=> ${workdir} " NewWorkDir
 test ! -z ${NewWorkDir} && workdir=${NewWorkDir}
 echo  "Your working ${workdir}"
-echo -e "\n"
+echo -e "\n" 
 test !  -d ${workdir} && echo "Your workdir is neither a directory nor existing" && exit 0
 
 #Verify source ipa
@@ -30,7 +30,7 @@ test ! -f ${workdir}/profile/${profilename} && echo "Your profile Doesn't exist 
 
 
 #Execute MAM command
-${MAMCmd} -i ${workdir}/input/${sourceName} -o ${workdir}/output/${sourceName}_${outputPostfix}  -p ${workdir}/profile/${profilename} -c ${SHAHashCode}  -v true
+${MAMCmd} -i ${workdir}/input/${sourceName} -o ${workdir}/output/${sourceName}_${outputPostfix}.ipa  -p ${workdir}/profile/${profilename} -c ${SHAHashCode}  -v true
 
 
 
