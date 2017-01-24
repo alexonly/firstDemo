@@ -13,7 +13,7 @@ function setCustomedVar() {
 }
 
 #define var
-MAMCmd=/Users/prode/Desktop/Contents/MacOS/IntuneMAMPackager
+MAMCmd=/Users/prode/Desktop/MDM/Contents/MacOS/IntuneMAMPackager
 SHAHashCode=0CFDA9E07D328E164A037E0DBC538DEBE92ADD00
 outputPostfix=$(date +%Y%m%d_%H%M%S)
 
